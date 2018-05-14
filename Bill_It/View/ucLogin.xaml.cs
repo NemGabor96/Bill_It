@@ -34,13 +34,30 @@ namespace Bill_It.View
 
         private void btEsc_Click(object sender, RoutedEventArgs e)
         {
-            Application.Current.Shutdown();
+            ucLoginClass.btEsc_Click();
         }
 
         private void btTalca_Click(object sender, RoutedEventArgs e)
         {
-            wndMain wndMain = new wndMain();
-            wndMain.Minimizer();
+            ucLoginClass.btTalca_Click();
+        }
+        
+        private void btRegisztracio_Click(object sender, RoutedEventArgs e)
+        {
+            ucLoginClass.btRegisztracio_Click();
+        }
+
+        private void btBelepes_Click(object sender, RoutedEventArgs e)
+        {
+            ucLoginClass.btBelepes_Click(tbFelhasznalo.Text, pwJelszo.Password);
+        }
+
+        private void grMain_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+            {
+                ucLoginClass.btBelepes_Click(tbFelhasznalo.Text, pwJelszo.Password);
+            }
         }
     }
 }
