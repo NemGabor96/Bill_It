@@ -21,16 +21,12 @@ namespace Bill_It.View
     public partial class wndMain : Window
     {
         private ucLogin ucloginPage;
-        private bool clicado = false;
-        private Point lm = new Point();
 
         public wndMain()
         {
             InitializeComponent();
 
             mainGrid.Children.Add(ucloginPage = new ucLogin(mainGrid));
-            
-
         }
 
         
