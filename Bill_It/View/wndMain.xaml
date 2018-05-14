@@ -1,0 +1,14 @@
+﻿<Window x:Class="Bill_It.View.wndMain"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Bill_It"
+        mc:Ignorable="d"
+        WindowStyle="None"
+     
+    Title="Bill It" Height="720" Width="1280">
+    <Grid Name="mainGrid" MouseDown="mainGrid_MouseDown" MouseMove="mainGrid_MouseMove">
+        
+    </Grid>
+</Window>
