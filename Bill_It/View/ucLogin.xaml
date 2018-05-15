@@ -23,11 +23,11 @@
             <RowDefinition Height="60"/>
         </Grid.RowDefinitions>
         <StackPanel Grid.Column="2" Grid.Row="2" Orientation="Horizontal">
-            <Label Width="200" Margin="20" Content="Felhasználónév" FontSize="23" VerticalContentAlignment="Center" HorizontalContentAlignment="Right"/>
+            <Label Name="lbFelhasznalo" Width="200" Margin="20" Content="Felhasználónév" FontSize="23" VerticalContentAlignment="Center" HorizontalContentAlignment="Right"/>
             <TextBox Name="tbFelhasznalo" Width="280" Margin="30,15,15,15" TabIndex="0" Background="Transparent"  Padding="2" FontSize="30" BorderBrush="Black"  BorderThickness="0,0,0,2" UseLayoutRounding="True"/>
         </StackPanel>
         <StackPanel Grid.Column="2" Grid.Row="4" Orientation="Horizontal">
-            <Label Width="200" Margin="20" Content="Jelszó" FontSize="23" VerticalContentAlignment="Center" HorizontalContentAlignment="Right"/>
+            <Label Name="lbJelszo" Width="200" Margin="20" Content="Jelszó" FontSize="23" VerticalContentAlignment="Center" HorizontalContentAlignment="Right"/>
             <PasswordBox Name="pwJelszo" Width="280" Margin="30,15,15,15" TabIndex="1" Background="Transparent"  BorderThickness="0,0,0,2" UseLayoutRounding="True" Padding="2" FontSize="30" BorderBrush="Black"/>
         </StackPanel>
         <Grid Grid.Column="0" Grid.RowSpan="7" Background="#42f4a1">
@@ -45,7 +45,7 @@
             <Button Name="btBelepes" Click="btBelepes_Click" Content="Belépés" FontSize="30" FontWeight="SemiBold" Grid.Column="2" Grid.Row="5" Width="250" Height="60" HorizontalAlignment="Right" Margin="20,0,40,0" BorderBrush="Transparent" BorderThickness="0" Background="#42f4a1"/>
 
         </StackPanel>
-
+        <Label Name="lbHibaFelJel" Visibility="Hidden" Grid.Column="3" Grid.Row="1" Width="320" Height="50" VerticalAlignment="Bottom" Foreground="Red" Content="Hibás felhasználónév vagy jelszó!" FontSize="20"/>
 
     </Grid>
 </UserControl>

@@ -49,14 +49,14 @@ namespace Bill_It.View
 
         private void btBelepes_Click(object sender, RoutedEventArgs e)
         {
-            ucLoginClass.btBelepes_Click(tbFelhasznalo.Text, pwJelszo.Password);
+            ucLoginClass.btBelepes_Click(tbFelhasznalo, pwJelszo,lbFelhasznalo,lbJelszo,lbHibaFelJel);
         }
 
         private void grMain_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.Key == Key.Enter)
             {
-                ucLoginClass.btBelepes_Click(tbFelhasznalo.Text, pwJelszo.Password);
+                ucLoginClass.btBelepes_Click(tbFelhasznalo, pwJelszo, lbFelhasznalo, lbJelszo, lbHibaFelJel);
             }
         }
     }
