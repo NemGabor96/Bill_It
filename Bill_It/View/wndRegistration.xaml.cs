@@ -37,5 +37,17 @@ namespace Bill_It.View
         {
             wndRegistrationClass.InputRegularExpressionNumbers(e);
         }
+
+        private void btEsc_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btRegisztráció_Click(object sender, RoutedEventArgs e)
+        {
+            wndRegistrationClass wndRegistrationClass = new wndRegistrationClass();
+            wndRegistrationClass.RegistrationButtonClick(tbFelhasznalonev.Text,pbJelszo.Password,pbJelszoMegerosites.Password,tbVezeteknev.Text,
+                tbKeresztnev.Text,tbVaros.Text,tbIranyitoszam.Text,tbUtcaHazszam.Text,tbCsaladtagok.Text,cbFAQOlvasas);
+        }
     }
 }

@@ -52,7 +52,10 @@
         <PasswordBox Name="pbJelszoMegerosites" Style="{StaticResource RegPasswordBoxStyle}" Grid.Column="1" Grid.Row="6"/>
         <Label Name="lbCim"  Content="Regisztráció" Style="{StaticResource RegLabelCimStyle}" Grid.ColumnSpan="4"/>
         <Label Name="lbHibaUezenet" Style="{StaticResource RegLabelHibaStyle}" Visibility="Hidden" Grid.Row="1" Grid.ColumnSpan="3"/>
-        <Button Name="btRegisztráció" Style="{StaticResource RegButtonStyle}" Content="Regisztrálás" Grid.Row="10" Grid.Column="2" Grid.ColumnSpan="2" Grid.RowSpan="3"/>
+        <Button Name="btRegisztráció" Style="{StaticResource RegButtonStyle}" Click="btRegisztráció_Click" Content="Regisztrálás" Grid.Row="10" Grid.Column="2" Grid.ColumnSpan="2" Grid.RowSpan="3"/>
         <CheckBox Name="cbFAQOlvasas" Style="{StaticResource  RegCheckBoxStyle}" Content="Elolvastam az Adatvédelmi törvényeket és egyetértek az FAQ-val!" Grid.Row="12" Grid.ColumnSpan="2" />
+        <Grid Grid.Column="3">
+            <Button  Name="btEsc" Style="{StaticResource ExitTaskButtonStyle}" Content="X" Click="btEsc_Click" Width="50" Margin="0,0,10,0" />
+        </Grid>
     </Grid>
 </Window>
