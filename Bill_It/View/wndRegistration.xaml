@@ -9,8 +9,8 @@
         Title="wndRegistration" Height="720" Width="900">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="60"/>
-            <RowDefinition Height="100"/>
+            <RowDefinition Height="80"/>
+            <RowDefinition Height="80"/>
             <RowDefinition Height="80"/>
             <RowDefinition Height="10"/>
             <RowDefinition Height="80"/>
@@ -30,6 +30,29 @@
             <ColumnDefinition Width="225"/>
             <ColumnDefinition Width="225"/>
         </Grid.ColumnDefinitions>
-        <Grid Grid.ColumnSpan="4" Background="#42f4a1"/>
+        <Grid Grid.ColumnSpan="4" Background="{StaticResource Zöld}" HorizontalAlignment="Right" Width="900"/>
+
+        <Label Content="Felhasználónév*" Style="{StaticResource RegLabelStyle}" Grid.Column="0" Grid.Row="2"/>
+        <Label Content="Jelszó*" Style="{StaticResource RegLabelStyle}" Grid.Column="0" Grid.Row="4"/>
+        <Label Content="Jelszó Megerősítés*" Style="{StaticResource RegLabelStyle}" Grid.Column="0" Grid.Row="6"/>
+        <Label Content="Vezetéknév*" Style="{StaticResource RegLabelStyle}" Grid.Column="0" Grid.Row="8"/>
+        <Label Content="Keresztnév*" Style="{StaticResource RegLabelStyle}" Grid.Column="0" Grid.Row="10"/>
+        <Label Content="Város*" Style="{StaticResource RegLabelStyle}" Grid.Column="2" Grid.Row="2"/>
+        <Label Content="Irányítószám*" Style="{StaticResource RegLabelStyle}" Grid.Column="2" Grid.Row="4"/>
+        <Label Content="Utca, házszám*" Style="{StaticResource RegLabelStyle}" Grid.Column="2" Grid.Row="6"/>
+        <Label Content="Családtagok száma" Style="{StaticResource RegLabelStyle}" Grid.Column="2" Grid.Row="8"/>
+        <TextBox Name="tbFelhasznalonev" Style="{StaticResource RegTextBoxStyle}" Grid.Column="1" Grid.Row="2"/>
+        <TextBox Name="tbVezeteknev" Style="{StaticResource RegTextBoxStyle}" Grid.Column="1" Grid.Row="8"/>
+        <TextBox Name="tbKeresztnev" Style="{StaticResource RegTextBoxStyle}" Grid.Column="1" Grid.Row="10"/>
+        <TextBox Name="tbVaros" Style="{StaticResource RegTextBoxStyle}" Grid.Column="3" Grid.Row="2"/>
+        <TextBox Name="tbIranyitoszam" Style="{StaticResource RegTextBoxStyle}" PreviewTextInput="tbIranyitoszam_PreviewTextInput" Grid.Column="3" Grid.Row="4"/>
+        <TextBox Name="tbUtcaHazszam" Style="{StaticResource RegTextBoxStyle}" Grid.Column="3" Grid.Row="6"/>
+        <TextBox Name="tbCsaladtagok" Style="{StaticResource RegTextBoxStyle}" PreviewTextInput="tbCsaladtagok_PreviewTextInput"  Grid.Column="3" Grid.Row="8"/>
+        <PasswordBox Name="pbJelszo" Style="{StaticResource RegPasswordBoxStyle}" Grid.Column="1" Grid.Row="4"/>
+        <PasswordBox Name="pbJelszoMegerosites" Style="{StaticResource RegPasswordBoxStyle}" Grid.Column="1" Grid.Row="6"/>
+        <Label Name="lbCim"  Content="Regisztráció" Style="{StaticResource RegLabelCimStyle}" Grid.ColumnSpan="4"/>
+        <Label Name="lbHibaUezenet" Style="{StaticResource RegLabelHibaStyle}" Visibility="Hidden" Grid.Row="1" Grid.ColumnSpan="3"/>
+        <Button Name="btRegisztráció" Style="{StaticResource RegButtonStyle}" Content="Regisztrálás" Grid.Row="10" Grid.Column="2" Grid.ColumnSpan="2" Grid.RowSpan="3"/>
+        <CheckBox Name="cbFAQOlvasas" Style="{StaticResource  RegCheckBoxStyle}" Content="Elolvastam az Adatvédelmi törvényeket és egyetértek az FAQ-val!" Grid.Row="12" Grid.ColumnSpan="2" />
     </Grid>
 </Window>

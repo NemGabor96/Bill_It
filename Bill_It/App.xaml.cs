@@ -13,5 +13,9 @@ namespace Bill_It
     /// </summary>
     public partial class App : Application
     {
+        private void SolidColorBrush_SourceUpdated(object sender, System.Windows.Data.DataTransferEventArgs e)
+        {
+
+        }
     }
 }

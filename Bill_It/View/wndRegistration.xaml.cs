@@ -11,6 +11,10 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Text.RegularExpressions;
+using Bill_It.View;
+using Bill_It.Control;
+using Bill_It.Model;
 
 namespace Bill_It.View
 {
@@ -22,6 +26,16 @@ namespace Bill_It.View
         public wndRegistration()
         {
             InitializeComponent();
+        }
+
+        private void tbIranyitoszam_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            wndRegistrationClass.InputRegularExpressionNumbers(e);
+        }
+
+        private void tbCsaladtagok_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            wndRegistrationClass.InputRegularExpressionNumbers(e);
         }
     }
 }

@@ -23,26 +23,25 @@
             <RowDefinition Height="60"/>
         </Grid.RowDefinitions>
         <StackPanel Grid.Column="2" Grid.Row="2" Orientation="Horizontal">
-            <Label Name="lbFelhasznalo" Width="200" Margin="20" Content="Felhasználónév" FontSize="23" VerticalContentAlignment="Center" HorizontalContentAlignment="Right"/>
-            <TextBox Name="tbFelhasznalo" Width="280" Margin="30,15,15,15" TabIndex="0" Background="Transparent"  Padding="2" FontSize="30" BorderBrush="Black"  BorderThickness="0,0,0,2" UseLayoutRounding="True"/>
+            <Label Name="lbFelhasznalo" Style="{StaticResource LoginLabelStyle}" Content="Felhasználónév"/>
+            <TextBox Name="tbFelhasznalo" Style="{StaticResource LoginTextBoxStyle}" TabIndex="0" />
         </StackPanel>
         <StackPanel Grid.Column="2" Grid.Row="4" Orientation="Horizontal">
-            <Label Name="lbJelszo" Width="200" Margin="20" Content="Jelszó" FontSize="23" VerticalContentAlignment="Center" HorizontalContentAlignment="Right"/>
-            <PasswordBox Name="pwJelszo" Width="280" Margin="30,15,15,15" TabIndex="1" Background="Transparent"  BorderThickness="0,0,0,2" UseLayoutRounding="True" Padding="2" FontSize="30" BorderBrush="Black"/>
+            <Label Name="lbJelszo" Style="{StaticResource LoginLabelStyle}" Content="Jelszó"/>
+            <PasswordBox Name="pwJelszo" Style="{StaticResource LoginTextBoxStyle}" TabIndex="1" />
         </StackPanel>
-        <Grid Grid.Column="0" Grid.RowSpan="7" Background="#42f4a1">
+        <Grid Grid.Column="0" Grid.RowSpan="7" Background="{StaticResource Zöld}">
            
             
         </Grid>
-        <Grid Grid.Column="1" Grid.ColumnSpan="2" Background="#42f4a1">
-            <Button Grid.Column="2" HorizontalAlignment="Right" Name="btTalca" Click="btTalca_Click" Width="30" Height="30" BorderThickness="0" BorderBrush="Transparent" Content="-" FontSize="24" Margin="0,0,65,0" FontWeight="Bold" Background="Transparent" HorizontalContentAlignment="Center" VerticalAlignment="Top" VerticalContentAlignment="Center"/>
-
-            <Button Grid.Column="2" HorizontalAlignment="Right" Name="btEsc" Click="btEsc_Click" Width="50" BorderThickness="0" BorderBrush="Transparent" Content="X" FontSize="24" Margin="0,0,10,0" FontWeight="Bold" Background="Transparent" HorizontalContentAlignment="Center" VerticalAlignment="Top" VerticalContentAlignment="Center"/>
+        <Grid Grid.Column="1" Grid.ColumnSpan="2" Background="{StaticResource Zöld}">
+            <Button Name="btTalca" Style="{StaticResource ExitTaskButtonStyle}" Content="-" Grid.Column="2" Click="btTalca_Click" Width="30" Height="30" Margin="0,0,65,0" />
+            <Button  Name="btEsc" Style="{StaticResource ExitTaskButtonStyle}" Grid.Column="2" Content="X" Click="btEsc_Click" Width="50"   Margin="0,0,10,0"/>
 
         </Grid>
         <StackPanel Grid.Column="2" Grid.Row="5" Orientation="Horizontal">
-            <Button Name="btRegisztracio" Click="btRegisztracio_Click" Content="Regisztráció" FontSize="30" FontWeight="SemiBold" Grid.Column="2" Grid.Row="5" Width="250" Height="60" HorizontalAlignment="Right" Margin="30,0,0,0" BorderBrush="Transparent" BorderThickness="0" Background="#42f4a1"/>
-            <Button Name="btBelepes" Click="btBelepes_Click" Content="Belépés" FontSize="30" FontWeight="SemiBold" Grid.Column="2" Grid.Row="5" Width="250" Height="60" HorizontalAlignment="Right" Margin="20,0,40,0" BorderBrush="Transparent" BorderThickness="0" Background="#42f4a1"/>
+            <Button Name="btRegisztracio" Style="{StaticResource LoginButtonStyle}"  Click="btRegisztracio_Click" Content="Regisztráció"  Grid.Column="2" Grid.Row="5"/>
+            <Button Name="btBelepes" Style="{StaticResource LoginButtonStyle}"  Click="btBelepes_Click" Content="Belépés" Grid.Column="2" Grid.Row="5"/>
 
         </StackPanel>
         <Label Name="lbHibaFelJel" Visibility="Hidden" Grid.Column="3" Grid.Row="1" Width="320" Height="50" VerticalAlignment="Bottom" Foreground="Red" Content="Hibás felhasználónév vagy jelszó!" FontSize="20"/>

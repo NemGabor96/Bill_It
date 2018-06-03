@@ -5,10 +5,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Bill_It"
         mc:Ignorable="d"
+        
         WindowStyle="None"
      
     Title="Bill It" Height="720" Width="1280">
     <Grid Name="mainGrid" MouseDown="mainGrid_MouseDown" MouseMove="mainGrid_MouseMove">
-        
+       
     </Grid>
 </Window>
