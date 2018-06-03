@@ -53,6 +53,8 @@ namespace Bill_It.Control
                 lbFelhasznalo.Foreground = Brushes.Green;
                 lbJelszo.Foreground = Brushes.Green;
                 lbHibaFelJel.Visibility = Visibility.Hidden;
+                
+
                
             }
             else

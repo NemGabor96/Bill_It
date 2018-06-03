@@ -20,7 +20,8 @@ namespace Bill_It.View
     /// </summary>
     public partial class wndMain : Window
     {
-        private ucLogin ucloginPage;
+        public ucLogin ucloginPage;
+        public ucMainMenu ucMainMenuPage;
 
         public wndMain()
         {

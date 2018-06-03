@@ -68,10 +68,17 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="View\ucMainMenu.xaml.cs">
+      <DependentUpon>ucMainMenu.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\wndRegistration.xaml.cs">
       <DependentUpon>wndRegistration.xaml</DependentUpon>
     </Compile>
     <Page Include="View\ucLogin.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ucMainMenu.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
