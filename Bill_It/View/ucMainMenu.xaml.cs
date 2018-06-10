@@ -27,5 +27,7 @@ namespace Bill_It.View
             InitializeComponent();
             this.MainGrid = mainGrid;
         }
+
+      
     }
 }

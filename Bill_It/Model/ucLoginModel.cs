@@ -38,8 +38,8 @@ namespace Bill_It.Model
             List<ModelLoginBelepes> ElementModel = new List<ModelLoginBelepes>();
             Command = new MySqlCommand(Query, databaseConnector.myConnection);
             Command.CommandText = Query;
-
             databaseConnector.OpenConnection();
+            Command.ExecuteNonQuery();
 
             using (MySqlDataReader rdr = Command.ExecuteReader())
 

@@ -49,14 +49,49 @@ namespace Bill_It.View
 
         private void btBelepes_Click(object sender, RoutedEventArgs e)
         {
-            ucLoginClass.btBelepes_Click(tbFelhasznalo, pwJelszo,lbFelhasznalo,lbJelszo,lbHibaFelJel);
+            if (ucLoginClass.btBelepes_Click(tbFelhasznalo.Text, pwJelszo.Password) == true)
+
+            {
+              
+                lbFelhasznalo.Foreground = Brushes.Green;
+                lbJelszo.Foreground = Brushes.Green;
+                lbHibaFelJel.Visibility = Visibility.Hidden;
+                ucMainMenu ucMain;
+                mainGrid.Children.Clear();
+                mainGrid.Children.Add(new ucMainMenu(mainGrid));
+            }
+            else
+            {
+                
+                lbFelhasznalo.Foreground = Brushes.Red;
+                lbJelszo.Foreground = Brushes.Red;
+                lbHibaFelJel.Visibility = Visibility.Visible;
+            }
+           
         }
 
         private void grMain_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.Key == Key.Enter)
             {
-                ucLoginClass.btBelepes_Click(tbFelhasznalo, pwJelszo, lbFelhasznalo, lbJelszo, lbHibaFelJel);
+                if(ucLoginClass.btBelepes_Click(tbFelhasznalo.Text, pwJelszo.Password) == true)
+
+                   {
+                    
+                    lbFelhasznalo.Foreground = Brushes.Green;
+                    lbJelszo.Foreground = Brushes.Green;
+                    lbHibaFelJel.Visibility = Visibility.Hidden;
+                    ucMainMenu ucMain;
+                    mainGrid.Children.Clear();
+                    mainGrid.Children.Add(new ucMainMenu(mainGrid));
+                }
+                else
+                {
+                    
+                    lbFelhasznalo.Foreground = Brushes.Red;
+                    lbJelszo.Foreground = Brushes.Red;
+                    lbHibaFelJel.Visibility = Visibility.Visible;
+                }
             }
         }
     }

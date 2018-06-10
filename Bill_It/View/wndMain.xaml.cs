@@ -39,7 +39,10 @@ namespace Bill_It.View
 
         private void mainGrid_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            
+            if(e.ChangedButton == MouseButton.Left)
+            {
+                this.DragMove();
+            }
         }
 
         private void mainGrid_MouseMove(object sender, MouseEventArgs e)

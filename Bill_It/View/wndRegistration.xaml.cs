@@ -46,8 +46,23 @@ namespace Bill_It.View
         private void btRegisztráció_Click(object sender, RoutedEventArgs e)
         {
             wndRegistrationClass wndRegistrationClass = new wndRegistrationClass();
-            wndRegistrationClass.RegistrationButtonClick(tbFelhasznalonev.Text,pbJelszo.Password,pbJelszoMegerosites.Password,tbVezeteknev.Text,
-                tbKeresztnev.Text,tbVaros.Text,tbIranyitoszam.Text,tbUtcaHazszam.Text,tbCsaladtagok.Text,cbFAQOlvasas);
+            if (true == wndRegistrationClass.RegistrationButtonClick(tbFelhasznalonev.Text, pbJelszo.Password, pbJelszoMegerosites.Password, tbVezeteknev.Text,
+                tbKeresztnev.Text, tbVaros.Text, tbIranyitoszam.Text, tbUtcaHazszam.Text, tbCsaladtagok.Text, cbFAQOlvasas))
+            {
+                pbJelszo.BorderBrush = Brushes.Black;
+                pbJelszoMegerosites.BorderBrush = Brushes.Black;
+                lbHibaUezenet.Visibility = Visibility.Hidden;
+            }
+            else
+            
+            {
+                lbHibaUezenet.Content = "A két jelszó nem egyezik vagy létezik a felhasználónév!";
+                lbHibaUezenet.Visibility = Visibility.Visible;
+                pbJelszo.BorderBrush = Brushes.Red;
+                pbJelszoMegerosites.BorderBrush = Brushes.Red;
+            }
+
+                
         }
     }
 }

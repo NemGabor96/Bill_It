@@ -23,6 +23,8 @@ namespace Bill_It.Control
     class wndRegistrationClass
     {
         wndRegistration wndRegistration = new wndRegistration();
+        DatabaseConnector databaseConnector = new DatabaseConnector();
+        MySqlCommand Command;
          
         public static void InputRegularExpressionNumbers(TextCompositionEventArgs e)
         {
@@ -30,36 +32,36 @@ namespace Bill_It.Control
             e.Handled = regex.IsMatch(e.Text);
         }
 
-        public void RegistrationButtonClick(string UserName, string PassWord, string PassWordAgain, string LastName, string FirstName, string City, string ZipCode, string Address, string Member, CheckBox CheckBox)
+        public bool RegistrationButtonClick(string UserName, string PassWord, string PassWordAgain, string LastName, string FirstName, string City, string ZipCode, string Address, string Member, CheckBox CheckBox)
         {
             string Query = "SELECT username FROM Users WHERE username='" + UserName + "';";
 
-            if(null != wndRegistrationModel.ModelRegistration_List(Query))
+            if(0 != wndRegistrationModel.ModelRegistration_List(Query).Count)
             {
+                return false;   
                 
-                wndRegistration.lbHibaUezenet.Content = "A felhasználó már létezik próbálkozzon mással";
-                wndRegistration.lbHibaUezenet.Visibility = Visibility.Visible;
-                wndRegistration.tbFelhasznalonev.BorderBrush = Brushes.Red;
             }
             else
             {
-                wndRegistration.tbFelhasznalonev.BorderBrush = Brushes.Black;
+               
 
-                if (PassWord == PassWordAgain)
+                if (PassWord == PassWordAgain && CheckBox.IsChecked == true)
                 {
+                   
+                    Query = "INSERT INTO Users (username,password,fname,lname,city,zipcode,address,member,role,reg_date,del) VALUES('"+UserName+"','"+PassWord+"','"+FirstName+"','"+LastName+"','"+City+"','"+ZipCode+"','"+Address+"','"+Member+"','1','"+DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") +"','1');";
+                    Command = new MySqlCommand(Query, databaseConnector.myConnection);
+                    databaseConnector.OpenConnection();
+                    Command.CommandText = Query;
+                    Command.ExecuteNonQuery();
                     MessageBox.Show("Sikeres regisztráció!");
 
-                    wndRegistration.pbJelszo.BorderBrush = Brushes.Black;
-                    wndRegistration.pbJelszoMegerosites.BorderBrush = Brushes.Black;
-                    wndRegistration.lbHibaUezenet.Visibility = Visibility.Hidden;
+                    return true;
+                    
                 }
                 else
                 {
+                    return false;
                     
-                    wndRegistration.lbHibaUezenet.Content = "A két jelszó nem egyezik";
-                    wndRegistration.lbHibaUezenet.Visibility = Visibility.Visible;
-                    wndRegistration.pbJelszo.BorderBrush = Brushes.Red;
-                    wndRegistration.pbJelszoMegerosites.BorderBrush = Brushes.Red;
                 }
             }
         }

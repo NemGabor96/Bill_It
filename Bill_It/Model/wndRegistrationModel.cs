@@ -34,8 +34,9 @@ namespace Bill_It.Model
             List<RegUserModel> ElementModel = new List<RegUserModel>();
             Command = new MySqlCommand(Query, databaseConnector.myConnection);
             Command.CommandText = Query;
-
             databaseConnector.OpenConnection();
+            Command.ExecuteNonQuery();
+            
 
             using (MySqlDataReader rdr = Command.ExecuteReader())
 

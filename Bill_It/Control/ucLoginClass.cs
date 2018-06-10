@@ -41,29 +41,18 @@ namespace Bill_It.Control
             registration.Show();
         }
 
-        public static void btBelepes_Click(TextBox tbFelhasznalo, PasswordBox pwJelszo, Label lbFelhasznalo, Label lbJelszo, Label lbHibaFelJel)
+        public static bool btBelepes_Click(string username, string password)
         {
             ucLoginModel ucLoginModel = new ucLoginModel();
-            string Query = "SELECT username, password, del, reg_date FROM Users WHERE username='"+tbFelhasznalo.Text+"' AND password='"+pwJelszo.Password+"' AND del = 1";
+            string Query = "SELECT username, password, del, reg_date FROM Users WHERE username='"+username+"' AND password='"+password+"' AND del = 1";
            
             if( 0 != ucLoginModel.ModelBelepes_List(Query).Count())
             {
-                tbFelhasznalo.BorderBrush = Brushes.Green;
-                pwJelszo.BorderBrush = Brushes.Green;
-                lbFelhasznalo.Foreground = Brushes.Green;
-                lbJelszo.Foreground = Brushes.Green;
-                lbHibaFelJel.Visibility = Visibility.Hidden;
-                
-
-               
+                return true;
             }
             else
             {
-                tbFelhasznalo.BorderBrush = Brushes.Red;
-                pwJelszo.BorderBrush = Brushes.Red;
-                lbFelhasznalo.Foreground = Brushes.Red;
-                lbJelszo.Foreground = Brushes.Red;
-                lbHibaFelJel.Visibility = Visibility.Visible;
+                return false;
             }
         }
 
