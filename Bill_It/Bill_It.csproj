@@ -68,7 +68,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Control\ucMainMenuClass.cs" />
     <Compile Include="Control\wndRegistrationClass.cs" />
+    <Compile Include="Model\ucMainMenuModel.cs" />
     <Compile Include="Model\wndRegistrationModel.cs" />
     <Compile Include="View\ucMainMenu.xaml.cs">
       <DependentUpon>ucMainMenu.xaml</DependentUpon>

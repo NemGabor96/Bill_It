@@ -113,5 +113,20 @@
         </Style>
         <!-- A Regisztrációs felület vége -->
 
+        <!-- A MainMenü felület kezdete -->
+        
+        <Style TargetType="Button" x:Key="MenuButtonStyle">
+            <Setter Property="Control.Background" Value="{StaticResource Zöld}"/>
+            <Setter Property="Control.FontSize" Value="30"/>
+            <Setter Property="Control.FontWeight" Value="SemiBold"/>
+            <Setter Property="Control.Width" Value="250"/>
+            <Setter Property="Control.Height" Value="100"/>
+            <Setter Property="Control.BorderBrush" Value="Transparent"/>
+            <Setter Property="Control.BorderThickness" Value="0"/>
+            <Setter Property="Control.HorizontalAlignment" Value="Right"/>
+            <Setter Property="Control.Margin" Value="30,0,0,0"/>
+        </Style>
+        <!-- A MainMenü felület vége -->
+
     </Application.Resources>
 </Application>

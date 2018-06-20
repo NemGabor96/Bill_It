@@ -28,6 +28,9 @@ namespace Bill_It.View
             this.MainGrid = mainGrid;
         }
 
-      
+        private void grMainMenu_KeyDown(object sender, KeyEventArgs e)
+        {
+
+        }
     }
 }
