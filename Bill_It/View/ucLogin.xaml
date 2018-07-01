@@ -31,12 +31,22 @@
             <PasswordBox Name="pwJelszo" Style="{StaticResource LoginTextBoxStyle}" TabIndex="1" />
         </StackPanel>
         <Grid Grid.Column="0" Grid.RowSpan="7" Background="{StaticResource Zöld}">
-           
+            <Border BorderBrush="{StaticResource SimaZöld}" BorderThickness="1,1,0,1" Margin="3,0,-3,0.2">
+                <Border.Effect>
+                    <BlurEffect/>
+                </Border.Effect>
+                
+            </Border>
             
         </Grid>
         <Grid Grid.Column="1" Grid.ColumnSpan="2" Background="{StaticResource Zöld}">
             <Button Name="btTalca" Style="{StaticResource ExitTaskButtonStyle}" Content="-" Grid.Column="2" Click="btTalca_Click" Width="30" Height="30" Margin="0,0,65,0" />
             <Button  Name="btEsc" Style="{StaticResource ExitTaskButtonStyle}" Grid.Column="2" Content="X" Click="btEsc_Click" Width="50"   Margin="0,0,10,0"/>
+            <Border BorderBrush="{StaticResource SimaZöld}" BorderThickness="0,1,0,0">
+                <Border.Effect>
+                    <BlurEffect/> 
+                </Border.Effect>
+            </Border>
 
         </Grid>
         <StackPanel Grid.Column="2" Grid.Row="5" Orientation="Horizontal">

@@ -7,11 +7,13 @@
         
        
         <SolidColorBrush x:Key="Zöld" Color="#42f4a1" />
+        <SolidColorBrush x:Key="SimaZöld" Color="Green"/>
+        <SolidColorBrush x:Key="VilágosZöld" Color="#4dff88"/>
+        <SolidColorBrush x:Key="FehérZöld" Color="#b3ffcc"/>
 
         <!-- A Login felület Style kezdete -->
 
         <Style TargetType="Button" x:Key="LoginButtonStyle">
-            <Setter Property="Control.Background" Value="{StaticResource Zöld}"/>
             <Setter Property="Control.FontSize" Value="30"/>
             <Setter Property="Control.FontWeight" Value="SemiBold"/>
             <Setter Property="Control.Width" Value="250"/>
@@ -20,6 +22,24 @@
             <Setter Property="Control.BorderThickness" Value="0"/>
             <Setter Property="Control.HorizontalAlignment" Value="Right"/>
             <Setter Property="Control.Margin" Value="30,0,0,0"/>
+            <Setter Property="Background" Value="{StaticResource Zöld}"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border Background="{TemplateBinding Background}" CornerRadius="5" BorderBrush="Black" BorderThickness="0">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            <Border.Effect>
+                                <DropShadowEffect/>
+                            </Border.Effect>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="{StaticResource FehérZöld}"/>
+                </Trigger>
+            </Style.Triggers>
         </Style>
 
         <Style x:Key="LoginTextBoxStyle">
@@ -27,7 +47,7 @@
             <Setter Property="Control.BorderThickness" Value="0,0,0,2"/>
             <Setter Property="Control.UseLayoutRounding" Value="True"/>
             <Setter Property="Control.FontSize" Value="30"/>
-            <Setter Property="Control.Padding" Value="2"/>
+            <Setter Property="Control.FontWeight" Value="SemiBold"/>
             <Setter Property="Control.Background" Value="Transparent"/>
             <Setter Property="Control.Margin" Value="30,15,15,15"/>
             <Setter Property="Control.Width" Value="280"/>
@@ -48,7 +68,8 @@
         <Style TargetType="Label" x:Key="LoginLabelStyle">
             <Setter Property="Control.VerticalContentAlignment" Value="Center"/>
             <Setter Property="Control.HorizontalContentAlignment" Value="Right"/>
-            <Setter Property="Control.FontSize" Value="23"/>
+            <Setter Property="Control.FontSize" Value="27"/>
+            <Setter Property="Control.FontWeight" Value="SemiBold"/>
             <Setter Property="Control.Margin" Value="20"/>
             <Setter Property="Control.Width" Value="200"/>
         </Style>
